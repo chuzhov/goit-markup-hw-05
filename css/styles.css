@@ -1,0 +1,593 @@
+:root {
+  --title-text-color: #212121;
+  --article-text-color: #757575;
+  --accent-color: #2196f3;
+  --primary-background-color: rgb(255, 255, 255);
+  --hero-background-color: rgba(47, 48, 58, 0.4);
+  --hero-fallback-color: #c4c4c4;
+  --primary-background-color-transp: rgba(255, 255, 255, 0.6);
+  --secondary-background-color: #f5f4fa;
+  --border-color-portfolio: #eeeeee;
+  --button-border-color: #000000;
+  --border-color: #afb1b8;
+
+  --header-line-color: #ececec;
+  --footer-color: #2f303a;
+
+  --logo-color-head: #2196f3;
+  --logo-color-tail: #000000;
+  --logo-color-contrast: #ffffff;
+}
+
+/* БАЗОВІ ЕЛЕМЕНТИ ДІЗАЙНУ */
+body {
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  /* font-weight: 400; browser default*/
+  /* font-style: normal; */
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+
+  color: var(--title-text-color);
+  background-color: var(--primary-background-color);
+}
+
+p, h1, h2, h3, h4, h5 {
+  margin:       0;
+  padding:      0;
+  margin-block: 0;
+}
+
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section {
+  padding: 94px 0;
+}
+
+.background-color {
+  background-color: var(--secondary-background-color);
+}
+
+.no-padding-bottom {
+  padding-bottom: 0;
+}
+
+.header {
+  border-bottom: 1px solid var(--header-line-color);
+}
+
+.header-combiner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Допоможний клас, що видаляє плашки у списках */
+.no-bullets {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.icon {
+  fill: currentColor;
+}
+
+.socials-horizontal-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 44px;
+  height: 44px;
+  
+  border-radius: 50%;
+  
+}
+
+/* Розмічаємо лого студії */
+.text-logo-url {
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.19;
+  text-decoration: none;
+}
+.text-logo-url .logo-color1 {
+  color: var(--logo-color-head);
+}
+.text-logo-url .logo-color2 {
+  color: var(--logo-color-tail);
+}
+.text-logo-url .logo-color3 {
+  color: var(--logo-color-contrast); /*для футера */
+}
+
+/* Розмічаємо головне меню */
+
+.main-menu {
+  /* флекс із лого і меню - щоб поставити їх в один рядок*/
+  display: flex;
+  align-items: center;
+}
+
+.main-menu-list {
+  /* робимо горизонтальним меню */
+  display: flex;
+  margin-left: 93px; /* відступ до логотипу  */
+}
+
+.main-menu-item > a {
+  display: block; /* потрібно щоб встановити верт.розміри елементам меню */
+  padding-top: 32px; /* встановлюємо розмір хедера відступами вниз та вверх */
+  padding-bottom: 32px; /* також буде збільшений розмір реакції на ховер */
+
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  text-shadow: none;
+
+  color: var(--title-text-color); /* не наслідується бо посилання */
+}
+.main-menu-list .main-menu-item:not(:last-child) {
+  /* відступи між елементами крім останнього */
+  margin-right: 50px;
+}
+
+.current-menu-item > a {
+  color: var(--accent-color);
+}
+
+.main-menu-item a:hover,
+.main-menu-item a:focus {
+  color: var(--accent-color);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Розмічуємо мейл та телефон в футері */
+.link-email-phone {
+  display: flex;
+  margin-left: auto;
+}
+
+.email-phone-links {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.link-email-phone li:not(:last-child) {
+  margin-right: 50px;
+}
+
+.link-email-phone a {
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--article-text-color);
+}
+
+.link-email-phone a:hover,
+.link-email-phone a:focus {
+  color: var(--accent-color);
+}
+
+/* MAIN BANNER */
+
+.hero {
+  padding: 200px 0;
+
+  height: 600px;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+
+  text-align: center;
+  
+  background-color: var(--hero-fallback-color);
+  background-image: linear-gradient(to right, var(--hero-background-color), var(--hero-background-color)), 
+                    url("../images/hero-img.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  
+}
+
+.hero-title {
+  margin-top: 0;
+  margin-bottom: 30px;
+
+  font-size: 44px;
+  font-weight: 900;
+  line-height: 1.36;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  color: var(--primary-background-color);
+}
+
+/* Кнопка замовлення */
+.button {
+  padding: 9px 31px;
+  min-width: 216px;
+
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  text-align: center;
+
+  border: 1px solid var(--button-border-color);
+  border-radius: 4px;
+
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15); */
+  cursor: pointer;
+}
+.button.primary {
+  color: var(--primary-background-color);
+  background-color: var(--accent-color);
+}
+.button.secondary {
+  color: var(--title-text-color);
+  background-color: var(--secondary-background-color);
+}
+
+/* кнопки чекбокси в Портфоліо */
+.filter-button {
+  padding: 6px 22px;
+
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.63;
+  letter-spacing: 0.03em;
+
+  box-shadow: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  outline: none;
+}
+
+.filter-button.primary {
+  color: var(--primary-background-color);
+  background-color: var(--accent-color);
+  border-style: none;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.filter-button.secondary {
+  color: var(--title-text-color);
+  background-color: var(--secondary-background-color);
+  border-style: none;
+}
+
+/* Елемент фільтру при ховері чі у фокусі */
+
+.filter-button:hover,
+.filter-button:focus {
+  color: var(--primary-background-color);
+  background-color: var(--accent-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+/* Назва секції - невідима */
+/* sec 2 Скриваємо логічний заголовок секції, якого немає на екрані */
+.hidden-header {
+  display: none; /*тимчасове рішення*/
+}
+
+/* sec2 h3 Список переваг -------------------------------------------- */
+.section-features-list {
+  display: flex;
+  column-gap: 30px;
+}
+
+/* Задаємо шапки над кожною перевагою */
+.features-list-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  width: 270px;
+  height: 120px;
+  
+  background-color: var(--secondary-background-color);
+}
+
+
+
+.section-features-list-header {
+  margin: 30px 0 10px;
+
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.14;
+
+  text-transform: uppercase;
+}
+.section-features-list-content {
+  margin: 0;
+  line-height: 1.71;
+
+  color: var(--article-text-color);
+}
+
+/* sec 3, 4 Назва секції - відима */
+.section-name {
+  margin-top: 0;
+  margin-bottom: 50px;
+
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* sec 3 список - картинки в рядок ---------------------------------------- */
+.we-doing-list {
+  display: flex;
+  column-gap: 30px;
+}
+
+.we-doing-pic {
+  display: block;
+}
+
+/* sec 4 список працівників ----------------------------------------------- */
+.team-mate-list {
+  display: flex;
+  column-gap: 30px;
+}
+
+/* sec4 Картка працівника */
+.team-mate {
+  height: 428px;
+  background-color: var(--logo-color-contrast);
+
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.team-mate-pic {
+  display: block;
+}
+
+.team-mate-info {
+  padding: 30px 10px;
+}
+
+.team-mate-name {
+  margin: 0;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
+  text-align: center;
+}
+
+.team-mate-position {
+  margin-top: 10px;
+  margin-bottom: 16px;
+
+  font-size: 16px;
+  line-height: 1.19;
+  text-align: center;
+
+  color: var(--article-text-color);
+}
+
+.team-mate-socials {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  opacity: transparent;
+}
+
+.team-mate .socials-horizontal-block {
+  color: var(--border-color);
+  background-color: var(--logo-color-contrast);
+}
+
+.team-mate .socials-horizontal-block:hover,
+.team-mate .socials-horizontal-block:focus 
+{
+  color: var(--logo-color-contrast);
+  background-color: var(--accent-color);
+  outline: transparent;
+}
+
+/* Sec 5  перелік постійних клієнтів  */
+
+.clients-list {
+  display: flex;
+  justify-content: center;
+  column-gap: 30px;
+}
+.client-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 170px;
+  height: 92px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--border-color);
+  outline: transparent;
+
+  cursor: pointer;
+}
+.client-item:hover,
+.client-item:focus {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+/* -------- Розмічаємо Підвал --------------------------------------------------------- */
+
+.page-footer {
+  padding: 60px 0;
+
+  background-color: var(--footer-color);
+}
+
+/* Об'еднаємо всі блоки в футері  */
+.footer-combiner
+{
+  display: flex;
+  align-items: center;
+}
+
+/* Блок лого, адрес телефон мейл */
+.footer-address-block {
+  margin-right: 70px;
+}
+
+.studio-address {
+  margin-top: 20px;              /*відступ від блоку адреси до лого */
+}
+
+
+.footer-addr-text-style1 a {
+  margin-bottom: 9px;
+
+  line-height: 1.71;
+  text-decoration: none;
+  font-style: normal;
+
+  color: var(--logo-color-contrast);
+}
+
+.footer-addr-text-style2 a {
+
+  line-height: 1.71;
+  text-decoration: none;
+  font-style: normal;
+
+  color: var(--primary-background-color-transp);
+}
+
+.footer-addr-block li:not(:last-child) {
+  margin-bottom: 9px;
+}
+
+/* виділяємо посилання у підвалі */
+.footer-addr-text-style1 a:hover,
+.footer-addr-text-style1 a:focus,
+.footer-addr-text-style2 a:hover,
+.footer-addr-text-style2 a:focus {
+  color: var(--accent-color);
+}
+
+/* Футер блок: приєднуйся до нас в соц.мережах */
+
+.footer-follow-us {
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--primary-background-color);
+}
+
+.footer-our-socials-list {
+  display: flex;
+  column-gap: 10px;
+}
+
+.page-footer .socials-horizontal-block {
+  color: var(--logo-color-contrast);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.page-footer .socials-horizontal-block:hover,
+.page-footer .socials-horizontal-block:focus {
+  background-color: var(--accent-color);
+  outline: transparent;
+}
+
+/* ==================== СТОРІНКА ПОРТФОЛІО =================================== */
+/* Стилізуємо портфоліо */
+
+/* Фільтр робіт */
+.portfolio-filter-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  
+}
+.portfolio-filter-list li:not(:last-child) {
+  margin-right: 8px;
+}
+
+/* Перелік робіт  3х3  */
+.portfolio-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 30px;
+  column-gap: 30px;
+}
+
+.portfolio-item {
+  height: 404px;
+  background-color: var(--logo-color-contrast);
+  outline: none;
+}
+
+.portfolio-card-link {
+  display: block;
+}
+.portfolio-card-link:focus,
+.portfolio-card-link:hover {
+  outline: transparent;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 
+              0px 4px 4px rgba(0, 0, 0, 0.06), 
+              1px 4px 6px rgba(0, 0, 0, 0.16);
+
+}
+
+.portfolio-list img {
+  display: block;
+}
+
+.portfolio-info {
+  padding: 20px 24px;
+
+  border-right: 1px solid var(--border-color-portfolio);
+  border-bottom: 1px solid var(--border-color-portfolio);
+  border-left: 1px solid var(--border-color-portfolio);
+}
+
+.portfolio-card-link {
+  color: var(--title-text-color);
+  text-decoration: none;
+}
+
+.portfolio-item-title {
+  
+  margin-bottom: 4px;
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2em;
+  letter-spacing: 0.06em;
+}
+
+.portfolio-industry {
+  margin: 0;
+
+  font-size: 16px;
+  line-height: 1.875em;
+  color: var(--article-text-color);
+}
