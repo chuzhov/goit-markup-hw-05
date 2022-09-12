@@ -123,7 +123,13 @@ p, h1, h2, h3, h4, h5 {
   margin-left: 93px; /* відступ до логотипу  */
 }
 
+.main-menu-item {
+  position: relative;
+  width: 100%;
+}
+
 .main-menu-item > a {
+  
   display: block; /* потрібно щоб встановити верт.розміри елементам меню */
   padding-top: 32px; /* встановлюємо розмір хедера відступами вниз та вверх */
   padding-bottom: 32px; /* також буде збільшений розмір реакції на ховер */
@@ -141,6 +147,19 @@ p, h1, h2, h3, h4, h5 {
   margin-right: 50px;
 }
 
+.current-menu-item::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  border-bottom: 4px solid var(--accent-color);
+  border-radius: 2px;
+
+  content: "";
+
+}
+
 .current-menu-item > a {
   color: var(--accent-color);
 }
@@ -148,7 +167,7 @@ p, h1, h2, h3, h4, h5 {
 .main-menu-item a:hover,
 .main-menu-item a:focus {
   color: var(--accent-color);
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /* text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
 }
 
 /* Розмічуємо мейл та телефон в футері */
