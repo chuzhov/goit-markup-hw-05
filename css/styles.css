@@ -17,6 +17,8 @@
   --logo-color-head: #2196f3;
   --logo-color-tail: #000000;
   --logo-color-contrast: #ffffff;
+
+  --time-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* БАЗОВІ ЕЛЕМЕНТИ ДІЗАЙНУ */
@@ -513,12 +515,16 @@ button {
 .footer-combiner
 {
   display: flex;
-  align-items: center;
+  align-items: baseline;
 }
 
 /* Блок лого, адрес телефон мейл */
 .footer-address-block {
   margin-right: 70px;
+}
+
+.footer-social-block {
+  margin-right: 93px;
 }
 
 .studio-address {
